@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Student Registration Form</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background-color:#f2f2f2;
+}
+
+.container{
+    width:350px;
+    margin:40px auto;
+    background:white;
+    padding:20px;
+    border:1px solid gray;
+}
+
+h2{
+    text-align:center;
+}
+
+label{
+    display:block;
+    margin-top:10px;
+}
+
+input{
+    width:100%;
+    padding:7px;
+    margin-top:5px;
+}
+
+input[type="submit"]{
+    background:#0066cc;
+    color:white;
+    border:none;
+    margin-top:15px;
+    cursor:pointer;
+}
+
+</style>
+
+</head>
+<body>
+<div class="container">
+
+<h2>Student Registration Form</h2>
+
+<form action="student" method="post">
+
+<label>Student Name</label>
+<input type="text" name="name" required>
+
+<label>Roll Number</label>
+<input type="text" name="roll" required>
+
+<label>Year</label>
+<input type="text" name="year" required>
+
+<label>Department</label>
+<input type="text" name="department" required>
+
+<input type="submit" value="Register">
+
+</form>
+
+</div>
+
+</body>
+</html>
