@@ -1,4 +1,4 @@
-package com.model;
+package com.demo;
 import java.sql.*;
 
 public class demo {
@@ -6,9 +6,10 @@ public class demo {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
 
         Class.forName("com.mysql.cj.jdbc.Driver");
+        
         String url="jdbc:mysql://localhost:3306/ajt";
-        	String user="root";
-        	String pass="Qwertyviraj@2006";
+        String user="root";
+        String pass="Qwertyviraj@2006";
         
         Connection con = DriverManager.getConnection(url, user, pass);
         
