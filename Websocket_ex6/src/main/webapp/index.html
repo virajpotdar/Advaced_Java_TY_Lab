@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebSocket Chat</title>
+</head>
+<body>
+    <h2>Real-Time Chat</h2>
+    <textarea id="messages" rows="10" cols="40" readonly></textarea>
+    <br>
+
+    <input type="text" id="username" placeholder="Enter your name">
+    <br>
+
+    <input type="text" id="inputMsg" placeholder="Enter message">
+
+    <button onclick="sendMsg()">Send</button>
+
+
+    <script>
+
+        var ws = new WebSocket("http://localhost:8086/Websocket_ex6/chat");
+
+        ws.onmessage = function(event) {
+
+            document.getElementById("messages").value +=
+                event.data + "\n";
+        };
+        
+        function sendMsg() {
+
+            var username =
+                document.getElementById("username").value.trim();
+
+            var msg =
+                document.getElementById("inputMsg").value.trim();
+
+
+            if (username == "" || msg == "") {
+
+                alert("Please enter username and message");
+                return;
+
+            }
+
+
+            var fullMsg = username + ": " + msg;
+
+            ws.send(fullMsg);
+
+            document.getElementById("inputMsg").value = "";
+
+        }
+
+    </script>
+
+</body>
+
+</html>
